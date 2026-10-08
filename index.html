@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-content">
+        <a href="#home" class="logo">Student<span>Platonus</span></a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <nav class="nav" id="nav">
+            <a href="#home">Басты бет</a>
+            <a href="#tasks">Тапсырмалар</a>
+            <a href="#profile">Профиль</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <p class="small-title">СТУДЕНТТЕРГЕ АРНАЛҒАН ПЛАТФОРМА</p>
+
+                <h1>
+                    Оқуыңды
+                    <span>оңай басқар</span>
+                </h1>
+
+                <p>
+                    StudentPlatonus арқылы оқу тапсырмаларын,
+                    дедлайндарды және оқу прогресін
+                    бір жерде басқар.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#tasks" class="btn btn-primary">
+                        Тапсырмаларды көру
+                    </a>
+
+                    <a href="#features" class="btn btn-secondary">
+                        Толығырақ
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <h3>Бүгінгі прогресс</h3>
+
+                <div class="progress-info">
+                    <span>Оқу жоспары</span>
+                    <strong id="heroPercent">0%</strong>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar" id="heroBar"></div>
+                </div>
+
+                <div class="demo-task done">
+                    ✓ HTML және CSS
+                </div>
+
+                <div class="demo-task done">
+                    ✓ JavaScript
+                </div>
+
+                <div class="demo-task">
+                    ○ Жеке жоба
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="small-title">МҮМКІНДІКТЕР</p>
+
+                <h2>Оқуыңды бір жерде басқар</h2>
+
+                <p>
+                    StudyMate оқу процесін тиімді
+                    ұйымдастыруға көмектеседі.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <div class="icon">✓</div>
+
+                    <h3>Тапсырмалар</h3>
+
+                    <p>
+                        Барлық оқу тапсырмаларыңды
+                        бір жерде сақта.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">⏰</div>
+
+                    <h3>Дедлайн</h3>
+
+                    <p>
+                        Маңызды тапсырмалардың
+                        уақытын бақыла.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+
+                    <h3>Прогресс</h3>
+
+                    <p>
+                        Қанша тапсырма орындағаныңды
+                        бақыла.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="tasks-section" id="tasks">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="small-title">MY TASKS</p>
+
+                <h2>Менің тапсырмаларым</h2>
+
+                <p>
+                    Оқу тапсырмаларыңды басқар.
+                </p>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong id="total">0</strong>
+                    <span>Барлық тапсырма</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="completed">0</strong>
+                    <span>Орындалған</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="remaining">0</strong>
+                    <span>Қалған</span>
+                </div>
+
+            </div>
+
+            <div class="controls">
+
+                <div>
+                    <label for="search">Іздеу</label>
+
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Тапсырманы іздеу..."
+                    >
+                </div>
+
+                <div>
+                    <label for="filter">Сүзгі</label>
+
+                    <select id="filter">
+                        <option value="all">Барлығы</option>
+                        <option value="completed">Орындалған</option>
+                        <option value="remaining">Орындалмаған</option>
+                    </select>
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    id="addTaskBtn">
+                    + Тапсырма қосу
+                </button>
+
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="empty" class="empty">
+                Тапсырмалар табылмады.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="profile-section" id="profile">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="small-title">PROFILE</p>
+
+                <h2>Менің профилім</h2>
+
+                <p>
+                    Оқу прогресіңді бақыла.
+                </p>
+            </div>
+
+            <div class="profile-grid">
+
+                <div class="profile-card">
+
+                    <div class="avatar" id="avatar">
+                        S
+                    </div>
+
+                    <h2 id="profileName">
+                        Студент
+                    </h2>
+
+                    <p>
+                        Frontend Developer студенті
+                    </p>
+
+                    <div class="profile-info">
+
+                        <div>
+                            <span>Email</span>
+
+                            <strong id="profileEmail">
+                                aliaskarkadyrakyn@gmail.com
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Мамандық</span>
+
+                            <strong>
+                                IT
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Деңгей</span>
+
+                            <strong>
+                                Высший
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-card">
+
+                    <h2>Оқу прогресі</h2>
+
+                    <p class="gray">
+                        Тапсырмаларды орындау статистикасы.
+                    </p>
+
+                    <div class="progress-area">
+
+                        <div class="progress-info">
+                            <span>Жалпы прогресс</span>
+
+                            <strong id="profilePercent">
+                                0%
+                            </strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar"
+                                id="profileBar">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-stats">
+
+                        <div>
+                            <strong id="profileTotal">
+                                0
+                            </strong>
+
+                            <span>Барлығы</span>
+                        </div>
+
+                        <div>
+                            <strong id="profileCompleted">
+                                0
+                            </strong>
+
+                            <span>Орындалды</span>
+                        </div>
+
+                        <div>
+                            <strong id="profileRemaining">
+                                0
+                            </strong>
+
+                            <span>Қалды</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-card">
+
+                <h2>Профильді өзгерту</h2>
+
+                <form id="profileForm">
+
+                    <label for="name">
+                        Аты-жөніңіз
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Атыңызды енгізіңіз"
+                        required
+                    >
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@gmail.com"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        Сақтау
+                    </button>
+
+                </form>
+
+                <p id="message" class="success"></p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+
+            <h2>
+                Оқуыңды бүгіннен бастап басқар!
+            </h2>
+
+            <p>
+                Бірінші тапсырмаңды қазір қос.
+            </p>
+
+            <button
+                class="btn btn-white"
+                id="ctaButton">
+                Тапсырма қосу
+            </button>
+
+        </div>
+    </section>
+
+</main>
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <button
+            class="close"
+            id="closeModal">
+            ×
+        </button>
+
+        <h2>Жаңа тапсырма</h2>
+
+        <p>
+            Тапсырма туралы ақпаратты енгіз.
+        </p>
+
+        <form id="taskForm">
+
+            <label for="title">
+                Тапсырма атауы
+            </label>
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Мысалы: JavaScript оқу"
+                required
+            >
+
+            <label for="subject">
+                Пән
+            </label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Мысалы: Frontend"
+                required
+            >
+
+            <label for="date">
+                Дедлайн
+            </label>
+
+            <input
+                type="date"
+                id="date"
+                required
+            >
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Сақтау
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+            <div class="logo footer-logo">
+                Study<span>Mate</span>
+            </div>
+
+            <p>
+                Студенттерге арналған оқу платформасы.
+            </p>
+        </div>
+
+        <p>
+            © 2026 StudyMate
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
